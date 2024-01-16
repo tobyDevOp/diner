@@ -1,0 +1,15 @@
+{
+  "name": "tgoetzgr/SDEV%020328/diner",
+  "description": "MVC Diner Site",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "tobygoetz",
+      "email": "tngoetz@aol.com"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
