@@ -1,8 +1,12 @@
 img {
+    /* Temporary fix! */
     width: 50%;
 }
 
-html {
-    background-color: aqua;
-    /*color: aqua;*/
+a.btn-primary {
+    background-color: darkolivegreen;
+}
+
+h1 {
+    color: darkolivegreen;
 }
