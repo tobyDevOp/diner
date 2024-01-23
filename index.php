@@ -16,13 +16,12 @@ require_once ('vendor/autoload.php');
 $f3 = Base::instance(); // Static Method
 
 // Define a default route
-$f3->route('GET /breakfast', function() {
-    //echo 'hi';
-//    echo "Breakfast";
+$f3->route('GET /order1', function() {
+    echo 'Order Form Part I';
 
     //Display a view page
     $view = new Template();
-    echo $view->render('views/breakfast-menu.html');
+    echo $view->render('views/order-form-1.html');
 
 });
 
