@@ -16,14 +16,37 @@ require_once ('vendor/autoload.php');
 $f3 = Base::instance(); // Static Method
 
 // Define a default route
-$f3->route('GET /order1', function() {
-    echo 'Order Form Part I';
+$f3->route('GET|POST /order1', function($f3) {
+//    echo 'Order Form Part I';
+
+    // if the form has been posted
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Validate the data
+        $food = $_POST['food'];
+        $meal = $_POST['meal'];
+
+        // Put the data in the session array
+        $f3->set('SESSION.food', $food);
+        $f3->set('SESSION.meal', $meal);
+
+        // Redirect to order2 route
+        $f3->reroute('summary');
+    }
 
     //Display a view page
     $view = new Template();
     echo $view->render('views/order-form-1.html');
 
 });
+
+// Define an order summary route
+$f3->route('GET /summary', function($f3) {
+
+    $view = new Template();
+    echo $view->render('views/order-summary-1');
+});
+
+
 
 // Run Fat-Free
 $f3->run(); // Instance Method
